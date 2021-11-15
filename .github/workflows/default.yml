@@ -1,0 +1,18 @@
+name: Setup action workflow
+
+on: [push]
+
+jobs:
+  default:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup premierbloc context
+        id: setup
+        uses: premierbloc/setup@0.0.1
+        with:
+          ref: ${{ github.ref }}
+          number: ${{ github.event.number }}
+
+      - name: Get the output environment
+        run: echo "environment=${{ steps.setup.outputs.environment }}"
