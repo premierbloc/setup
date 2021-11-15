@@ -1,6 +1,13 @@
 name: Setup action workflow
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
+    tags:
+  pull_request:
+    branches:
+      - main
 
 jobs:
   default:
@@ -15,4 +22,7 @@ jobs:
           number: ${{ github.event.number }}
 
       - name: Get the output environment
-        run: echo "environment=${{ steps.setup.outputs.environment }}"
+        run: |
+          echo "environment=${{ steps.setup.outputs.environment }}"
+          echo "service=${{ steps.setup.outputs.service }}"
+          echo "tag=${{ steps.setup.outputs.tag }}"

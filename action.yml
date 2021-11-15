@@ -1,14 +1,13 @@
 name: "premierbloc - Setup"
 description: "Sets up your premierbloc context in your GitHub Actions workflow."
 
-inputs:
-  ref:
-    description: "The branch or tag ref that triggered the workflow."
-    required: true
-
 outputs:
   environment:
-    description: "The environment calculated from ref."
+    description: "The environment computed from GitHub context."
+  application:
+    description: "The application name computed from repository."
+  tag:
+    description: "The tag computed from GitHub context."
 
 runs:
   using: "docker"
