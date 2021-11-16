@@ -16,10 +16,7 @@ jobs:
     steps:
       - name: Setup premierbloc context
         id: setup
-        uses: premierbloc/setup@0.0.2
-        with:
-          ref: ${{ github.ref }}
-          number: ${{ github.event.number }}
+        uses: premierbloc/setup@0.0.3
 
       - name: Get the output environment
         run: |
