@@ -8,6 +8,8 @@ case $GITHUB_REF in
     *                  ) environment=''
 esac
 
+env
+
 echo "::set-output name=environment::$environment"
 echo "::set-output name=application::$(basename $GITHUB_REPOSITORY)"
 echo "::set-output name=tag::$tag"

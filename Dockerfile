@@ -6,6 +6,4 @@ RUN apk update && \
 
 COPY entrypoint.sh /entrypoint.sh
 
-env
-
 ENTRYPOINT ["/entrypoint.sh"]
