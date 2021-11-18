@@ -19,8 +19,8 @@ jobs:
         id: setup
         uses: premierbloc/setup@0.0.7
 
-      - name: Get the output environment
+      - name: Get setup outputs
         run: |
           echo "environment=${{ steps.setup.outputs.environment }}"
-          echo "service=${{ steps.setup.outputs.service }}"
+          echo "application=${{ steps.setup.outputs.application }}"
           echo "tag=${{ steps.setup.outputs.tag }}"
