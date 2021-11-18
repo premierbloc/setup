@@ -4,7 +4,7 @@ tag=$GITHUB_SHA
 case $GITHUB_REF in
     refs/tags/*        ) environment=production; tag=$GITHUB_REF_NAME ;;
     refs/heads/main    ) environment=stage ;;
-    refs/pull/*        ) environment=pullrequest-${INPUT_NUMBER} ;;
+    refs/pull/*        ) environment=pullrequest-$(dirname $GITHUB_REF_NAME) ;;
     *                  ) environment=''
 esac
 
