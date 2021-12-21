@@ -1,6 +1,11 @@
 name: "premierbloc - Setup"
 description: "Sets up your premierbloc context in your GitHub Actions workflow."
 
+inputs:
+  bucket:
+    description: "The bucket use to store the terraform states files."
+    required: true
+
 outputs:
   environment:
     description: "The environment computed from GitHub context."
@@ -12,3 +17,5 @@ outputs:
 runs:
   using: "docker"
   image: "Dockerfile"
+  args:
+    - ${{ inputs.bucket }}
